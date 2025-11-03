@@ -16,14 +16,14 @@ import lombok.NoArgsConstructor;
 public class OrderPromotions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "OrderPromotionID")
+    @Column(name = "order_promotion_id")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "OrderID")
+    @JoinColumn(name = "order_id")
     private SalesOrder order;
 
     @ManyToOne
-    @JoinColumn(name = "PromotionID")
+    @JoinColumn(name = "promotion_id")
     private Promotion promotion;
 }

@@ -18,39 +18,42 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "UserID")
+    @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "Username", length = 50, nullable = false, unique = true)
+    @Column(name = "username", length = 50, nullable = false, unique = true)
     private String username;
 
-    @Column(name = "PasswordHash", length = 60, nullable = false)
+    @Column(name = "password_hash", length = 60, nullable = false)
     private String passwordHash;
 
-    @Column(name = "FullName", length = 100, nullable = false)
+    @Column(name = "full_name", length = 100, nullable = false)
     private String fullName;
 
-    @Column(name = "Email", length = 100)
+    @Column(name = "email", length = 100)
     private String email;
 
-    @Column(name = "DateJoined")
+    @Column(name = "date_joined")
     private OffsetDateTime dateJoined;
 
-    @Column(name = "IsActive")
+    @Column(name = "is_active")
     private Boolean isActive;
 
     @ManyToOne
-    @JoinColumn(name = "RoleID", nullable = false)
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
     @ManyToOne
-    @JoinColumn(name = "BrandID")
+    @JoinColumn(name = "brand_id")
     private Brand brand;
 
     @ManyToOne
-    @JoinColumn(name = "DealerID")
+    @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
     @OneToMany(mappedBy = "user")
     private Set<DistributionOrder> distributionOrders;
+
+    @OneToMany(mappedBy = "staffUser")
+    private Set<Appointment> appointments;
 }

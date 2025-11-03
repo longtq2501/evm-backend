@@ -18,29 +18,29 @@ import java.time.LocalDate;
 public class DealerContract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ContractID")
+    @Column(name = "contract_id")
     private Long id;
 
-    @Column(name = "StartDate")
+    @Column(name = "start_date")
     private LocalDate startDate;
 
-    @Column(name = "EndDate")
+    @Column(name = "end_date")
     private LocalDate endDate;
 
-    @Column(name = "ContractTerms", columnDefinition = "TEXT")
+    @Column(name = "contract_terms", columnDefinition = "TEXT")
     private String contractTerms;
 
-    @Column(name = "CommissionRate", precision = 5, scale = 2)
+    @Column(name = "commission_rate", precision = 5, scale = 2)
     private BigDecimal commissionRate;
 
-    @Column(name = "SalesTarget", precision = 15, scale = 2)
+    @Column(name = "sales_target", precision = 15, scale = 2)
     private BigDecimal salesTarget;
 
     @ManyToOne
-    @JoinColumn(name = "BrandID")
+    @JoinColumn(name = "brand_id")
     private Brand brand;
 
     @ManyToOne
-    @JoinColumn(name = "DealerID")
+    @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 }

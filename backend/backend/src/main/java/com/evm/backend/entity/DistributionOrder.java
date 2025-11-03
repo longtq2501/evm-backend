@@ -18,39 +18,39 @@ import java.time.OffsetDateTime;
 public class DistributionOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "DistributionOrderID")
+    @Column(name = "distribution_order_id")
     private Long id;
 
-    @Column(name = "DealerID")
+    @Column(name = "dealer_id")
     private Long dealerId;
 
-    @Column(name = "OrderDate")
+    @Column(name = "order_date")
     private OffsetDateTime orderDate;
 
-    @Column(name = "ShipmentDate")
+    @Column(name = "shipment_date")
     private OffsetDateTime shipmentDate;
 
-    @Column(name = "DeliveryDate")
+    @Column(name = "delivery_date")
     private OffsetDateTime deliveryDate;
 
-    @Column(name = "Status", length = 50)
+    @Column(name = "status", length = 50)
     private String status;
 
-    @Column(name = "TotalQuantity")
+    @Column(name = "total_quantity")
     private Integer totalQuantity;
 
-    @Column(name = "TrackingNumber", length = 100)
+    @Column(name = "tracking_number", length = 100)
     private String trackingNumber;
 
     @ManyToOne
-    @JoinColumn(name = "RequestID")
+    @JoinColumn(name = "request_id")
     private SellInRequest sellInRequest;
 
     @ManyToOne
-    @JoinColumn(name = "BrandID")
+    @JoinColumn(name = "brand_id")
     private Brand brand;
 
     @ManyToOne
-    @JoinColumn(name = "ApproverID")
+    @JoinColumn(name = "user_id")
     private User user;
 }

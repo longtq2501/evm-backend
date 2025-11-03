@@ -17,26 +17,26 @@ import java.util.Set;
 public class Dealer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "DealerID")
+    @Column(name = "dealer_id")
     private Long id;
 
-    @Column(name = "DealerName", length = 150)
+    @Column(name = "dealer_name", length = 150)
     private String dealerName;
 
-    @Column(name = "Address", length = 255)
+    @Column(name = "address", length = 255)
     private String address;
 
-    @Column(name = "PhoneNumber", length = 20)
+    @Column(name = "phone_number", length = 20)
     private String phoneNumber;
 
-    @Column(name = "Email", length = 100)
+    @Column(name = "email", length = 100)
     private String email;
 
-    @Column(name = "DealerLevel", length = 50)
+    @Column(name = "dealer_level", length = 50)
     private String dealerLevel;
 
     @ManyToOne
-    @JoinColumn(name = "BrandID")
+    @JoinColumn(name = "brand_id")
     private Brand brand;
 
     @OneToMany(mappedBy = "dealer")

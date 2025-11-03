@@ -19,40 +19,40 @@ import java.util.Set;
 public class SalesOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "OrderID")
+    @Column(name = "order_id")
     private Long id;
 
-    @Column(name = "OrderDate")
+    @Column(name = "order_date")
     private LocalDate orderDate;
 
-    @Column(name = "BasePrice", precision = 15, scale = 2)
+    @Column(name = "base_price", precision = 15, scale = 2)
     private BigDecimal basePrice;
 
-    @Column(name = "VAT", precision = 15, scale = 2)
+    @Column(name = "vat", precision = 15, scale = 2)
     private BigDecimal vat;
 
-    @Column(name = "RegistrationFee", precision = 15, scale = 2)
+    @Column(name = "registration_fee", precision = 15, scale = 2)
     private BigDecimal registrationFee;
 
-    @Column(name = "DiscountAmount", precision = 15, scale = 2)
+    @Column(name = "discount_amount", precision = 15, scale = 2)
     private BigDecimal discountAmount;
 
-    @Column(name = "TotalPrice", precision = 15, scale = 2)
+    @Column(name = "total_price", precision = 15, scale = 2)
     private BigDecimal totalPrice;
 
-    @Column(name = "Status", length = 50)
+    @Column(name = "status", length = 50)
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "VehicleID")
+    @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "CustomerID")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "SalesPersonID")
+    @JoinColumn(name = "user_id")
     private User salesPerson;
 
     @OneToMany(mappedBy = "order")

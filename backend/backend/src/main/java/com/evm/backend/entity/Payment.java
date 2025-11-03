@@ -18,29 +18,29 @@ import java.time.LocalDate;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PaymentID")
+    @Column(name = "payment_id")
     private Long id;
 
-    @Column(name = "PaymentDate")
+    @Column(name = "payment_date")
     private LocalDate paymentDate;
 
-    @Column(name = "Amount", precision = 15, scale = 2)
+    @Column(name = "amount", precision = 15, scale = 2)
     private BigDecimal amount;
 
-    @Column(name = "PaymentMethod", length = 50)
+    @Column(name = "payment_method", length = 50)
     private String paymentMethod;
 
-    @Column(name = "PaymentType", length = 50)
+    @Column(name = "payment_type", length = 50)
     private String paymentType;
 
-    @Column(name = "ReferenceNumber", length = 100)
+    @Column(name = "reference_number", length = 100)
     private String referenceNumber;
 
     @ManyToOne
-    @JoinColumn(name = "OrderID")
+    @JoinColumn(name = "order_id")
     private SalesOrder order;
 
     @ManyToOne
-    @JoinColumn(name = "PayerID")
+    @JoinColumn(name = "payer_id")
     private Customer payer;
 }

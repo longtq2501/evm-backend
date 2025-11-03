@@ -18,21 +18,21 @@ import java.util.Set;
 public class SellInRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RequestID")
+    @Column(name = "request_id")
     private Long id;
 
-    @Column(name = "RequestDate")
+    @Column(name = "request_date")
     private LocalDate requestDate;
 
-    @Column(name = "Status", length = 50)
+    @Column(name = "status", length = 50)
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "DealerID")
+    @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
     @ManyToOne
-    @JoinColumn(name = "ApproverID")
+    @JoinColumn(name = "user_id")
     private User approver;
 
     @OneToMany(mappedBy = "sellInRequest")

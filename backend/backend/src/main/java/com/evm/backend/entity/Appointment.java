@@ -17,31 +17,31 @@ import java.time.OffsetDateTime;
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "AppointmentID")
+    @Column(name = "appointment_id")
     private Long id;
 
-    @Column(name = "AppointmentTime")
+    @Column(name = "appointment_time")
     private OffsetDateTime appointmentTime;
 
-    @Column(name = "Status", length = 50)
+    @Column(name = "status", length = 50)
     private String status;
 
-    @Column(name = "Notes", columnDefinition = "TEXT")
+    @Column(name = "notes", columnDefinition = "TEXT")
     private String notes;
 
     @ManyToOne
-    @JoinColumn(name = "CustomerID")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "StaffUserID")
+    @JoinColumn(name = "user_id")
     private User staffUser;
 
     @ManyToOne
-    @JoinColumn(name = "ProductID")
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "DealerID")
+    @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 }

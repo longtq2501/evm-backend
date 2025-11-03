@@ -17,19 +17,19 @@ import java.util.Set;
 public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "BrandID")
+    @Column(name = "brand_id")
     private Integer id;
 
-    @Column(name = "BrandName", length = 100)
+    @Column(name = "brand_name", length = 100)
     private String brandName;
 
-    @Column(name = "HeadquartersAddress", length = 255)
+    @Column(name = "headquarters_address", length = 255)
     private String headquartersAddress;
 
-    @Column(name = "TaxCode", length = 20)
+    @Column(name = "tax_code", length = 20)
     private String taxCode;
 
-    @Column(name = "ContactInfo", length = 255)
+    @Column(name = "contact_info", length = 255)
     private String contactInfo;
 
     @OneToMany(mappedBy = "brand")

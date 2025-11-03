@@ -19,28 +19,28 @@ import java.util.Set;
 public class Promotion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PromotionID")
+    @Column(name = "promotion_id")
     private Long id;
 
-    @Column(name = "PromotionCode", length = 50)
+    @Column(name = "promotion_code", length = 50)
     private String promotionCode;
 
-    @Column(name = "Description", columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "DiscountType", length = 20)
+    @Column(name = "discount_type", length = 20)
     private String discountType;
 
-    @Column(name = "DiscountValue", precision = 10, scale = 2)
+    @Column(name = "discount_value", precision = 10, scale = 2)
     private BigDecimal discountValue;
 
-    @Column(name = "StartDate")
+    @Column(name = "start_date")
     private LocalDate startDate;
 
-    @Column(name = "EndDate")
+    @Column(name = "end_date")
     private LocalDate endDate;
 
-    @Column(name = "Conditions", columnDefinition = "TEXT")
+    @Column(name = "conditions", columnDefinition = "TEXT")
     private String conditions;
 
     @OneToMany(mappedBy = "promotion")

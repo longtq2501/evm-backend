@@ -17,34 +17,34 @@ import java.time.OffsetDateTime;
 public class SupportTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "TicketID")
+    @Column(name = "ticket_id")
     private Long id;
 
-    @Column(name = "Title", length = 200)
+    @Column(name = "title", length = 200)
     private String title;
 
-    @Column(name = "Description", columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "Status", length = 50)
+    @Column(name = "status", length = 50)
     private String status;
 
-    @Column(name = "CreatedAt")
+    @Column(name = "createdAt")
     private OffsetDateTime createdAt;
 
-    @Column(name = "ClosedAt")
+    @Column(name = "closedAt")
     private OffsetDateTime closedAt;
 
     @ManyToOne
-    @JoinColumn(name = "AssignedUserID")
+    @JoinColumn(name = "user_id")
     private User assignedUser;
 
     @ManyToOne
-    @JoinColumn(name = "SalesOrderID")
+    @JoinColumn(name = "order_id")
     private SalesOrder salesOrder;
 
     @ManyToOne
-    @JoinColumn(name = "CustomerID")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToOne

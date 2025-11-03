@@ -16,20 +16,20 @@ import lombok.NoArgsConstructor;
 public class SellInRequestDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RequestDetailID")
+    @Column(name = "request_detail_id")
     private Long id;
 
-    @Column(name = "Quantity")
+    @Column(name = "quantity")
     private Integer quantity;
 
-    @Column(name = "Color", length = 30)
+    @Column(name = "color", length = 30)
     private String color;
 
     @ManyToOne
-    @JoinColumn(name = "RequestID")
+    @JoinColumn(name = "request_id")
     private SellInRequest sellInRequest;
 
     @ManyToOne
-    @JoinColumn(name = "ProductID")
+    @JoinColumn(name = "product_id")
     private Product product;
 }

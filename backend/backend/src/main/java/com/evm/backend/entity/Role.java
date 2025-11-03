@@ -17,20 +17,20 @@ import java.util.Set;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RoleID")
+    @Column(name = "role_id")
     private Integer id;
 
-    @Column(name = "RoleName", length = 50)
+    @Column(name = "role_name", length = 50)
     private String roleName;
 
-    @Column(name = "DisplayName", length = 100)
+    @Column(name = "display_name", length = 100)
     private String displayName;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "RoleType")
+    @Column(name = "role_type")
     private RoleType roleType;
 
-    @Column(name = "Description", columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
     @OneToMany(mappedBy = "role")

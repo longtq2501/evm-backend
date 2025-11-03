@@ -17,30 +17,30 @@ import java.util.Set;
 @Table(name = "vehicle")
 public class Vehicle {
     @Id
-    @Column(name = "VehicleID", length = 50)
+    @Column(name = "vehicle_id", length = 50)
     private String id;
 
-    @Column(name = "VIN", length = 50)
+    @Column(name = "vin", length = 50)
     private String vin;
 
-    @Column(name = "BatterySerial", length = 50)
+    @Column(name = "battery_serial", length = 50)
     private String batterySerial;
 
-    @Column(name = "Color", length = 30)
+    @Column(name = "color", length = 30)
     private String color;
 
-    @Column(name = "ManufactureDate")
+    @Column(name = "manufacture_date")
     private LocalDate manufactureDate;
 
-    @Column(name = "Status", length = 50)
+    @Column(name = "status", length = 50)
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "ProductID")
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "DealerID")
+    @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
     @OneToMany(mappedBy = "vehicle")

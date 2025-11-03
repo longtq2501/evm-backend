@@ -18,33 +18,36 @@ import java.util.Set;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ProductID")
+    @Column(name = "product_id")
     private Long id;
 
-    @Column(name = "ProductName", length = 150)
+    @Column(name = "product_name", length = 150)
     private String productName;
 
-    @Column(name = "Version", length = 50)
+    @Column(name = "version", length = 50)
     private String version;
 
-    @Column(name = "MSRP", precision = 15, scale = 2)
+    @Column(name = "msrp", precision = 15, scale = 2)
     private BigDecimal msrp;
 
-    @Column(name = "Specifications", columnDefinition = "TEXT")
+    @Column(name = "specifications", columnDefinition = "TEXT")
     private String specifications;
 
-    @Column(name = "Description", columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "ImageURL", length = 255)
+    @Column(name = "image_url", length = 255)
     private String imageUrl;
 
     @ManyToOne
-    @JoinColumn(name = "BrandID")
+    @JoinColumn(name = "brand_id")
     private Brand brand;
 
     @OneToMany(mappedBy = "product")
     private Set<Vehicle> vehicles;
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private Set<Appointment> appointments;
 
     @OneToMany(mappedBy = "product")
     private Set<SellInRequestDetails> sellInRequestDetails;
